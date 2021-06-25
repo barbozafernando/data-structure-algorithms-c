@@ -43,7 +43,7 @@ int main()
   int z, y;
 
   for (z = 0; z < MAX; z++) {
-      arr[z] = rand() % RANDOM_MAX;
+    arr[z] = rand() % RANDOM_MAX;
   }
 
   system("cls");
