@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX 10
-#define RANDOM_MAX 50
+#define ARRAY_SIZE 15
+#define RANDOM_ARRAY_SIZE 100
 
 void display(int *array, int showMsg) {
-  int i;
-
   if (showMsg == 0) {
     printf("Before: [ ");
   } else if (showMsg == 1) {
@@ -15,7 +13,7 @@ void display(int *array, int showMsg) {
     printf("[ ");
   }
   
-  for(i = 0; i < MAX; i++) {
+  for(int i = 0; i < ARRAY_SIZE; i++) {
     printf("%d ", array[i]);
   }
   
@@ -23,10 +21,8 @@ void display(int *array, int showMsg) {
 }
 
 void bubble_sort(int *array) {
-  int i,n;
-
-  for (n = 0; n < MAX-1; n++) {
-    for (i = 0; i < MAX-1; i++) {
+  for (int n = 0; n < ARRAY_SIZE; n++) {
+    for (int i = 0; i < ARRAY_SIZE - 1 - n; i++) {
       if (array[i] > array[i+1]) {
         int temp = array[i];
 
@@ -39,11 +35,10 @@ void bubble_sort(int *array) {
 
 int main()
 {
-  int arr[MAX];
-  int z, y;
+  int arr[ARRAY_SIZE];
 
-  for (z = 0; z < MAX; z++) {
-    arr[z] = rand() % RANDOM_MAX;
+  for (int z = 0; z < ARRAY_SIZE; z++) {
+    arr[z] = rand() % RANDOM_ARRAY_SIZE;
   }
 
   #ifdef _WIN32
