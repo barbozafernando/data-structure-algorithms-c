@@ -46,7 +46,11 @@ int main()
     arr[z] = rand() % RANDOM_MAX;
   }
 
-  system("cls");
+  #ifdef _WIN32
+    system("cls");
+  #else
+    system("clear");
+  #endif
 
   display(arr, 0);    
   bubble_sort(arr);
